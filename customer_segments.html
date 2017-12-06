@@ -12171,7 +12171,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO：为DataFrame创建一个副本，用&#39;drop&#39;函数丢弃一个特征</span>
@@ -12188,7 +12188,7 @@ div#notebook {
     <span class="n">y_pred</span> <span class="o">=</span> <span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
     <span class="c1"># TODO：输出在测试集上的预测得分</span>
-    <span class="n">score</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_true</span><span class="o">=</span><span class="n">y_test</span><span class="p">)</span>
     <span class="n">feature_importances</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="s2">&quot;:&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span><span class="n">regressor</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span>
     <span class="k">print</span> <span class="n">target_column</span><span class="p">,</span><span class="s2">&quot; r2: &quot;</span><span class="p">,</span><span class="n">score</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">feature_importances</span><span class="p">)</span>
 </pre></div>
@@ -12207,12 +12207,12 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Fresh  r2:  -0.768740520409 Frozen:0.459905872373, Milk:0.179330733579
-Milk  r2:  0.0549977369976 Detergents_Paper:0.481405032221, Grocery:0.227798401666
-Grocery  r2:  0.743577789722 Detergents_Paper:0.869877177125, Milk:0.0645252863183
-Frozen  r2:  -1.41248679046 Delicatessen:0.447727414077, Fresh:0.205888952543
-Detergents_Paper  r2:  0.557250563487 Grocery:0.904052913455, Fresh:0.0306755254488
-Delicatessen  r2:  0.163480647815 Frozen:0.673128671962, Fresh:0.119653559898
+<pre>Fresh  r2:  -0.252469807688 Frozen:0.459905872373, Milk:0.179330733579
+Milk  r2:  0.365725292736 Detergents_Paper:0.481405032221, Grocery:0.227798401666
+Grocery  r2:  0.602801978878 Detergents_Paper:0.869877177125, Milk:0.0645252863183
+Frozen  r2:  0.253973446697 Delicatessen:0.447727414077, Fresh:0.205888952543
+Detergents_Paper  r2:  0.728655181254 Grocery:0.904052913455, Fresh:0.0306755254488
+Delicatessen  r2:  -11.6636871594 Frozen:0.673128671962, Fresh:0.119653559898
 </pre>
 </div>
 </div>
